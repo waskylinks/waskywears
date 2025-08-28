@@ -1,0 +1,27 @@
+:root {
+  --h1: clamp(2rem, 5vw, 3rem);
+  --h2: clamp(1.5rem, 4vw, 2.5rem);
+  --h3: clamp(1.12rem, 3vw, 2rem);
+  --body: clamp(0.9rem, 2.5vw, 1.1rem);
+
+  --bg: #0d0d0f;
+  --surface: #121216;
+  --card: #16171d;
+  --ink: #fefeff;
+  --muted: #a7a7b0;
+  --line: #24252b;
+
+  --acc1: #ffb703;
+  --acc2: #ff5a5f;
+  --acc3: #7c5cff;
+  --acc4: #28c0b5;
+  --ring: 0 0 0 3px color-mix(in oklab, var(--acc3) 40%, transparent);
+
+  --radius: 14px;
+  --radius-lg: 22px;
+  --pad: clamp(1.25rem, 3vw, 2rem);
+  --gap: clamp(1rem, 2.4vw, 1.75rem);
+  --carousel-h: min(50vh, 520px);
+  --reel-duration: 40s;
+}
+

@@ -1,0 +1,166 @@
+@import './Variables.css';
+
+:root {
+  --color-primary: #1a1a1a;
+  --color-accent: #d4af37;
+  --color-bg: #fdfdfd;
+  --color-text: #333;
+
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Poppins', sans-serif;
+
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+
+}
+
+.navbar {
+  background: linear-gradient(90deg, rgba(0,0,0,.35), transparent 15% 85%, rgba(0,0,0,.35));
+  border-bottom: 1px solid #4d4a4a;
+  position: relative;
+  z-index: 10;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  height: 3rem;
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+  padding: 1rem;
+  color: rgb(255, 215, 0);
+}
+
+/* desktop links*/
+.nav-links.desktop {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--color-bg);
+}
+
+/* Dropdown desktop */
+.dropdown-menu {
+  position: absolute;
+  background: radial-gradient(1000px 400px at 70% 10%, color-mix(in oklab, var(--muted) 50%, transparent), transparent 70%), linear-gradient(180deg, color-mix(in oklab, var(--surface) 60%, transparent), transparent);
+  box-shadow: 0 4px 8px rgba(0,0,0,0,1);
+  backdrop-filter: blur(50px);
+  list-style: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  border-color: gold;
+}
+
+.dropdown-menu li {
+  margin: 0.5rem 0;
+}
+
+/* Hamburger */
+.hamburger {
+  width: 30px;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+  z-index: 10001;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hamburger::before,
+.hamburger::after,
+.hamburger div {
+  content: "";
+  background-color: rgb(255, 255, 255);
+  height: 3px;
+  width: 100%;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  position: absolute;
+}
+
+.hamburger::before {
+  top: 0;
+}
+
+.hamburger::after {
+  bottom: 0;
+}
+
+.hamburger div {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Transform into an x an y */
+.hamburger.open::before {
+  transform: translateY(-50%)
+  rotate(-45deg);
+  bottom: 50%;
+}
+
+.hamburger.open::after {
+  transform: translateY(50%)
+  rotate(-45deg);
+  top: 50%;
+}
+
+.hamburger.open div {
+  background-color: transparent;
+}
+
+/* Mobile menu*/
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 50%;
+  max-width: 300px;
+  height: 100vh;
+  background: radial-gradient(1000px 400px at 70% 10%, color-mix(in oklab, var(--color-primary) 54%, transparent), transparent 70%), linear-gradient(180deg, color-mix(in oklab, var(--color-bg) 30%, transparent), transparent); 
+  box-shadow: -2px 0 6px rgba(0,0,0,15);
+  padding: 2rem 1rem;
+  backdrop-filter: blur(10px);
+  list-style: none;
+  z-index: 10;
+}
+
+.mobile-menu li {
+  margin-bottom: 0.7rem;
+  margin-top: 0.8rem;
+  color: whitesmoke;
+}
+
+/* overlay*/
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 5;
+
+}
+
+
+@media (max-width: 768px) {
+  .nav-links.desktop {
+    display: none;
+  }
+
+  .hamburger {
+    display: block;
+  }
+}
